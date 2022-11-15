@@ -17,12 +17,6 @@
             </svg>
         </a>
         <!--      <a style="color:black" class="py-2 d-none d-md-inline-block">-->
-        <a style="color:black" href="">
-            <b>
-                {{ info_cit.city }}
-                {{ info_cit.temp }}
-            </b>
-        </a>
 
         <!--      </a>-->
         <!--        <a style="color:black" class="py-2 d-none d-md-inline-block"-->
@@ -46,6 +40,7 @@
                 <label for="city">Місто</label>
                 {{ form.name }}
                 <input type="submit" name="send" value="Дізнатися" class="mt-2 btn btn-dark">
+
             </form>
         </div>
         <div class="col-4 offset=1">
@@ -68,8 +63,32 @@
             </div>
 
             {% endfor %}
+
+
+            {% for city in page_obj %}
+
+            {% endfor %}
+
+            <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+            </div>
         </div>
     </div>
 </div>
 </body>
+
 </html>

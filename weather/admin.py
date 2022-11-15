@@ -5,5 +5,5 @@ from .models import City, About
 
 
 admin.site.register(City)
-admin.site.register(About)
+# admin.site.register(About)
 
