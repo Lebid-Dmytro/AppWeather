@@ -101,6 +101,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# REST_FRAMEWORK = {
+#     'DEFAULT_PAGINATION_CLASS': 'my_project.apps.core.pagination.LinkHeaderPagination',
+#     'PAGE_SIZE': 5
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
