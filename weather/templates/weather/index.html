@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Погода для котиків</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color:Teal;">
+<header class="site-header sticky-top py-1">
+    <nav class="container d-flex flex-column flex-md-row justify-content-between">
+        <a style="color:black" class="py-2" href="/" aria-label="Product">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="74" fill="none" stroke="currentColor"
+                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img"
+                 viewBox="0 0 24 24"><title>Product</title>
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path>
+            </svg>
+        </a>
+        <!--      <a style="color:black" class="py-2 d-none d-md-inline-block">-->
+
+        <!--      </a>-->
+        <!--        <a style="color:black" class="py-2 d-none d-md-inline-block"-->
+        <!--           href="https://www.google.com/search?q=kyiv&rlz=1C1SQJL_ruUA924UA924&sxsrf=ALiCzsa7_FxTKyWP-heIoDFhsDWA5jMltw%3A1664895394303&ei=okk8Y8X-EZeJ9u8Pk4mo4Ao&gs_ssp=eJzj4tTP1TcwKs4zNjFg9GLJrswsAwAo8wTL&oq=Kyiv&gs_lcp=Cgdnd3Mtd2l6EAEYADIECC4QJzIRCC4QgAQQsQMQgwEQxwEQ0QMyCwgAEIAEELEDEIMBMggIABCxAxCDATIFCC4QgAQyCAguEIAEELEDMgQIABBDMgUIABCABDILCAAQgAQQsQMQgwEyEQguEIAEELEDEIMBEMcBENEDOgoIABBHENYEELADOgoILhCABBDUAhAKOgcILhCABBAKOgcIABCABBAKSgQIQRgASgQIRhgAUPcJWIYNYM0aaAFwAXgAgAGMAYgBhQKSAQMwLjKYAQCgAQHIAQjAAQE&sclient=gws-wiz"-->
+        <!--        >Київ </a>-->
+        <!--    <a style="color:black" class="py-2 d-none d-md-inline-block" href="https://www.google.com/search?q=warszawa&rlz=1C1SQJL_ruUA924UA924&sxsrf=ALiCzsYwdvbyuq2yKK7kmzWIWe1ee0Z4jg%3A1664895498953&ei=Cko8Y5DEObr97_UP3bGU8AU&gs_ssp=eJzj4tDP1TewMMyNN2D04ihPLCquSixPBAA6HgY2&oq=War&gs_lcp=Cgdnd3Mtd2l6EAEYADIECC4QQzIUCC4QgAQQsQMQgwEQxwEQ0QMQ1AIyCwguEIAEELEDEIMBMgQIABBDMgQILhBDMgcILhDUAhBDMgQIABBDMgQIABADMgsILhCABBCxAxCDATILCC4QgAQQsQMQgwE6BggjECcQEzoECCMQJzoOCC4QgAQQsQMQgwEQ1AI6CgguEMcBEK8BEENKBAhBGABKBAhGGABQAFjYBGDmEWgAcAF4AIABeogBuQKSAQMyLjGYAQCgAQHAAQE&sclient=gws-wiz">Варшава</a>-->
+        <!--    <a style="color:black" class="py-2 d-none d-md-inline-block" href="https://www.google.com/search?q=Berlin&rlz=1C1SQJL_ruUA924UA924&sxsrf=ALiCzsa7_FxTKyWP-heIoDFhsDWA5jMltw%3A1664895394303&ei=okk8Y8X-EZeJ9u8Pk4mo4Ao&ved=0ahUKEwjF18LU6sb6AhWXhP0HHZMECqwQ4dUDCA4&uact=5&oq=Berlin&gs_lcp=Cgdnd3Mtd2l6EAMyCgguELEDEIMBEEMyBAgAEEMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQguEIAEMgsILhCxAxCDARDUAjILCC4QgAQQxwEQrwEyCwguEIAEEMcBEK8BMggILhCABBDLAToECCMQJzoHCC4Q1AIQQzoECC4QQzoTCC4QsQMQgwEQxwEQ0QMQ1AIQQzoICAAQgAQQsQM6CwgAEIAEELEDEIMBOg4ILhCABBCxAxDHARDRAzoKCAAQsQMQgwEQQzoRCC4QgAQQsQMQgwEQxwEQ0QM6CwguEIAEELEDENQCSgQIQRgASgQIRhgAUABYkBBgmRdoAHABeACAAckCiAHMCJIBBzEuMy4xLjGYAQCgAQHAAQE&sclient=gws-wiz">Берлін</a>-->
+        <!--    <a style="color:black" class="py-2 d-none d-md-inline-block" href="https://www.google.com/search?q=london&rlz=1C1SQJL_ruUA924UA924&sxsrf=ALiCzsavDtEgonILqkUGFyky-KFdgMrH_Q%3A1664895525830&ei=JUo8Y5_5MfqA9u8Ps-2n-AU&gs_ssp=eJzj4tDP1TcwySrIMWD0YsvJz0vJzwMAMSMFkw&oq=Lon&gs_lcp=Cgdnd3Mtd2l6EAMYADINCC4QsQMQgwEQ1AIQQzIICAAQgAQQsQMyBAgAEEMyEQguEIAEELEDEIMBEMcBENEDMgUIABCABDIFCAAQgAQyBQgAEIAEMgsIABCABBCxAxCDATIOCC4QgAQQsQMQxwEQ0QMyBQgAEIAEOgQIIxAnOgcILhDUAhBDOgQILhBDOhMILhCxAxCDARDHARDRAxDUAhBDOgoILhDHARDRAxBDSgQIQRgASgQIRhgAUABYnwRgmA9oAHABeACAAYwBiAHxApIBAzAuM5gBAKABAcABAQ&sclient=gws-wiz">Лондон</a>-->
+        <!--    <a style="color:black" class="py-2 d-none d-md-inline-block" href="https://www.google.com/search?q=Stambul&rlz=1C1SQJL_ruUA924UA924&sxsrf=ALiCzsb9L2oWr2yLJSnp0sq5fRzRQSAgyw%3A1664895550545&ei=Pko8Y7DvIPWB9u8PtuyfqAQ&ved=0ahUKEwiwhoOf68b6AhX1gP0HHTb2B0UQ4dUDCA4&uact=5&oq=Stambul&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyDQguEIAEELEDENQCEAoyDQguEIAEELEDEIMBEAoyBwgAEIAEEAoyCggAEIAEELEDEAoyBQgAEIAEMg0IABCABBCxAxCDARAKMg0IABCABBCxAxCDARAKMgcIABCABBAKMgcIABCABBAKOgYIIxAnEBM6BggAEAoQQzoECC4QQzoECAAQQzoLCAAQgAQQsQMQgwE6CAguEIAEELEDOgsILhCABBDHARCvAToICC4QgAQQ1AI6CggAEIAEEAoQywE6BQguEIAEOgcILhCABBAKOgoIABCABBCHAhAUSgQIQRgASgQIRhgAUABYqDhgwzxoAHABeACAAaABiAGXBpIBAzEuNpgBAKABAcABAQ&sclient=gws-wiz">Стамбул</a>-->
+        <!--&lt;!&ndash;    <a style="color:black" class="py-2 d-none d-md-inline-block" href="#">Кишинів</a>&ndash;&gt;-->
+        <!--&lt;!&ndash;    <a style="color:black" class="py-2 d-none d-md-inline-block" href="#">Бухарест</a>&ndash;&gt;-->
+
+    </nav>
+</header>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-7 offset=1">
+            <h1>Погода в місті </h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="city">Місто</label>
+                {{ form.name }}
+                <input type="submit" name="send" value="Дізнатися" class="mt-2 btn btn-dark">
+
+            </form>
+        </div>
+        <div class="col-4 offset=1">
+            <h1>Останні пошуки:</h1>
+
+            {% for info in all_info %}
+
+            <a href="{% url 'about' info.url %}">
+                <div class="alert alert-info">
+                    <div class="row">
+                        <div class="col-9">
+                            <b1>Місто:</b1>
+
+                            {{ info.city }} <br>
+                            <b1>Температура:</b1>
+                            {{ info.temp }},<sup>o</sup> <br>
+                        </div>
+                        <div class="col-2 offset-1">
+                            <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
